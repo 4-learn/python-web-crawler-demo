@@ -41,8 +41,8 @@ export PLAYGROUND=http://老師的IP:8000/
 | `11-trace-selenium/` | 11 | Trace Viewer；Selenium 4 與 Playwright 對照 |
 | `13-opencode/` | 13 | 寫給 OpenCode 的規格範例 |
 | `14-verify/` | 14 | 用 pytest 驗證爬蟲輸出 |
-| `15-change/` | 15 | v1／v2 變動偵測、ETag 條件式請求 |
-| `16-mariadb/` | 16 | JSONL 寫入 MariaDB（參數化查詢＋upsert） |
+| `15-change/` | 15 | v1／v2 變動偵測、ETag 條件式請求、筆數歸零報警 |
+| `16-mariadb/` | 16 | JSONL 寫入 MariaDB（參數化查詢＋upsert）；匯出 CSV／Markdown |
 
 第 12 節與 17–18 節是 Workshop，沒有示範程式。
 
