@@ -1,31 +1,33 @@
-# 爬蟲規格：職業安全衛生法（給 OpenCode 的範例）
+# 爬蟲規格範例：大量解僱勞工保護法（給 OpenCode）
+
+> 這是上課示範用的規格。Workshop 請換成另一部法規，自己寫一份。
 
 ## 目標
-從爬蟲練習站取得「職業安全衛生法」（pcode `N0060001`）全部條文，存成 JSONL。
+從爬蟲練習站取得「大量解僱勞工保護法」（pcode `N0020012`）全部條文，存成 JSONL。
 
 ## 來源
 - 首頁：https://4-learn.github.io/crawler-playground/
-- 優先使用 API：`v1/api/laws/N0060001/page-1.json`，依 `next` 欄位走完分頁。
-- 若改用 HTML：`v1/laws/N0060001/`，每條是 `article.article`，下一頁是 `a.next`。
+- 使用 API：`v1/api/laws/N0020012/page-1.json`，依 `next` 欄位走完分頁；`next` 是 `null` 就停。
 
 ## 輸出
-檔名 `N0060001.jsonl`，一行一條，UTF-8，欄位：
+檔名 `N0020012.jsonl`，一行一條，UTF-8，欄位：
 
 | 欄位 | 說明 | 範例 |
 |---|---|---|
-| `pcode` | 法規代碼 | `N0060001` |
+| `pcode` | 法規代碼 | `N0020012` |
 | `article_no` | 條號 | `第 1 條` |
-| `chapter` | 章名，沒有就空字串 | `第一章 總則` |
+| `chapter` | 章名，沒有就空字串 | |
 | `content` | 條文全文，多段以 `\n` 分隔 | |
-| `source_url` | 該條詳細頁網址 | `.../v1/laws/N0060001/articles/1.html` |
+| `source_url` | 該條詳細頁網址 | `.../v1/laws/N0020012/articles/1.html` |
 
 ## 驗收
-- 共 61 條，與 API 的 `total` 相同。
+- 條數等於 API 的 `total`。
 - 沒有重複的 `article_no`。
-- `第 1 條` 的內容以「為防止職業災害」開頭。
+- 執行結束時印出條數，以及第一條和最後一條的條號。
 
 ## 限制（不能做的事）
 - 先讀 robots.txt，不可請求 `Disallow` 的路徑。
 - 每次請求間隔至少 1 秒；設定 User-Agent `course-crawler/1.0 (你的暱稱)`。
-- 只用 `requests`（和需要時的 `beautifulsoup4`），不要用 Selenium。
-- 不要硬寫 61 這個數字來通過驗收；從 API 或頁面讀取總數。
+- 只用 `requests`，不要用 Selenium 或 Playwright。
+- 不要把條數寫死在程式裡；從 API 讀取總數。
+- 不要修改這份 SPEC.md。
