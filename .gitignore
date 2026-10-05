@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+output/
+*.jsonl
+state.json
+trace.zip
+*.png
+.env
+etag_cache.json
+dynamic.png
