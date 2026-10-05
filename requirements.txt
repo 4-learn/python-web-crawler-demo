@@ -1,0 +1,8 @@
+requests>=2.32
+beautifulsoup4>=4.12
+playwright>=1.50
+pytest>=8
+# 第 11 節 Selenium 對照（選用）
+selenium>=4.20
+# 第 16 節 MariaDB（需先安裝 libmariadb-dev，見 16-mariadb/README.md）
+# mariadb==1.1.14
