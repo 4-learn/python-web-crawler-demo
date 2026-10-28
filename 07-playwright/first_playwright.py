@@ -1,8 +1,8 @@
 """07｜第一支 Playwright 程式：開瀏覽器、等內容出現、截圖。
 
 安裝：pip install playwright && playwright install --with-deps chromium
-執行：python first_playwright.py           （預設 headless，看不到視窗）
-      HEADED=1 python first_playwright.py  （有桌面環境時可看到瀏覽器）
+執行：python 07-playwright/first_playwright.py           （預設 headless，看不到視窗）
+      HEADED=1 python 07-playwright/first_playwright.py  （有桌面環境時可看到瀏覽器）
 """
 import os
 
@@ -20,6 +20,7 @@ with sync_playwright() as p:
     print("等待後：", page.locator("h2.law-title").inner_text())
     print("article 數量：", page.locator("article.article").count())
 
-    page.screenshot(path="dynamic.png", full_page=False)
-    print("已存 dynamic.png")
+    os.makedirs("output", exist_ok=True)
+    page.screenshot(path="output/dynamic.png", full_page=False)
+    print("已存 output/dynamic.png")
     browser.close()

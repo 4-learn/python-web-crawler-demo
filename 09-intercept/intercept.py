@@ -1,6 +1,6 @@
 """09｜攔截網路回應：讓瀏覽器去載入，我們直接拿它背後的 JSON。
 
-執行：python intercept.py
+執行：python 09-intercept/intercept.py
 """
 import os
 

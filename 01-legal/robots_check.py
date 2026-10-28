@@ -1,6 +1,6 @@
 """01｜讀 robots.txt：判斷某個網址能不能爬。
 
-執行：python robots_check.py
+執行：python 01-legal/robots_check.py
 """
 import os
 import urllib.robotparser

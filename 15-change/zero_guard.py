@@ -1,6 +1,6 @@
 """15｜選擇器失效：抓到 0 條就停下來報錯，不要用空檔案覆蓋舊資料。
 
-執行：python zero_guard.py   （v1 正常；v2 改版後選擇器失效 → RuntimeError）
+執行：python 15-change/zero_guard.py   （v1 正常；v2 改版後選擇器失效 → RuntimeError）
 """
 import os
 

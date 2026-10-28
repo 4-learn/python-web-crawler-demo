@@ -1,6 +1,6 @@
 """07｜requests 只拿得到「原始碼」，看不到 JavaScript 產生的內容。
 
-執行：python requests_sees_nothing.py
+執行：python 07-playwright/requests_sees_nothing.py
 """
 import os
 

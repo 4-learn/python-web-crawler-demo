@@ -1,6 +1,6 @@
 """08｜Locator 與自動等待：不用 time.sleep。
 
-執行：python locators.py
+執行：python 08-locator/locators.py
 """
 import os
 

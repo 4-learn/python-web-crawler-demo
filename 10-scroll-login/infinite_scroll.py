@@ -1,6 +1,6 @@
 """10｜無限捲動：一直往下捲，直到出現「已經到底了」。
 
-執行：python infinite_scroll.py
+執行：python 10-scroll-login/infinite_scroll.py
 """
 import os
 

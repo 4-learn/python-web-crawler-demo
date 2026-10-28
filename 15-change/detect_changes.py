@@ -2,7 +2,7 @@
 
 做法：每條算一個 content_hash，比較兩邊的 {slug: hash}。
 v2 的 API 欄位名稱跟 v1 不同，先各自「正規化」成同一種格式再比。
-執行：python detect_changes.py [pcode]
+執行：python 15-change/detect_changes.py [pcode]
 """
 import hashlib
 import json

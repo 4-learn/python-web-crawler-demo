@@ -1,6 +1,6 @@
 """05｜詳細頁裡的 JSON-LD：網站自己提供的結構化資料。
 
-執行：python json_ld.py
+執行：python 05-pagination/json_ld.py
 """
 import json
 import os

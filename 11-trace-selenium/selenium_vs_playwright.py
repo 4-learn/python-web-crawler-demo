@@ -2,7 +2,7 @@
 
 Selenium 4.6 起內建 Selenium Manager，會自動下載對應的 driver，
 不再需要 webdriver_manager。
-執行：python selenium_vs_playwright.py
+執行：python 11-trace-selenium/selenium_vs_playwright.py
 """
 import os
 import time

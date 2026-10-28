@@ -1,6 +1,6 @@
 """04｜BeautifulSoup：用 CSS selector 取出法規列表。
 
-執行：python law_list.py
+執行：python 04-bs4/law_list.py
 """
 import os
 from urllib.parse import urljoin

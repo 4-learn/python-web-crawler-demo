@@ -2,7 +2,7 @@
 
 帳密從環境變數讀取，不要寫死在程式裡：
     export PG_USER=student PG_PASS=crawler-demo
-執行：python login_and_save.py
+執行：python 10-scroll-login/login_and_save.py
 """
 import os
 from pathlib import Path
@@ -10,11 +10,12 @@ from pathlib import Path
 from playwright.sync_api import expect, sync_playwright
 
 BASE = os.environ.get("PLAYGROUND", "https://4-learn.github.io/crawler-playground/")
-STATE = Path("state.json")  # 內含 cookie，等同登入憑證：不要 commit、不要分享
+STATE = Path("output/state.json")  # 內含 cookie，等同登入憑證：不要 commit、不要分享
 
 with sync_playwright() as p:
     browser = p.chromium.launch()
 
+    STATE.parent.mkdir(exist_ok=True)
     if not STATE.exists():
         context = browser.new_context()
         page = context.new_page()

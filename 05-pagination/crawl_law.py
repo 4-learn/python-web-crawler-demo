@@ -1,6 +1,6 @@
 """05｜跟著「下一頁」爬完一部法規，輸出 JSONL。
 
-執行：python crawl_law.py N0060001
+執行：python 05-pagination/crawl_law.py N0060001
 """
 import json
 import os
@@ -55,7 +55,8 @@ def crawl(pcode: str) -> list[dict]:
 if __name__ == "__main__":
     pcode = sys.argv[1] if len(sys.argv) > 1 else "N0060001"
     rows = crawl(pcode)
-    out = f"{pcode}.jsonl"
+    os.makedirs("output", exist_ok=True)
+    out = f"output/{pcode}.jsonl"
     with open(out, "w", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")

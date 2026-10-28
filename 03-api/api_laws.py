@@ -1,6 +1,6 @@
 """03｜先找 API：用 requests 取得 JSON，跟著 next 欄位走完分頁。
 
-執行：python api_laws.py
+執行：python 03-api/api_laws.py
 """
 import os
 from urllib.parse import urljoin

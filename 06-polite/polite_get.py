@@ -1,7 +1,7 @@
 """06｜有禮貌的 GET：先查 robots.txt、固定間隔、遇到 429 依 Retry-After 重試。
 
 其他程式可以 from polite_get import PoliteSession 重複使用。
-執行示範：python polite_get.py
+執行示範：python 06-polite/polite_get.py
 """
 import os
 import time
