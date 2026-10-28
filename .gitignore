@@ -12,3 +12,4 @@ dynamic.png
 *.csv
 16-mariadb/*.md
 !16-mariadb/README.md
+!diagrams/*.png
