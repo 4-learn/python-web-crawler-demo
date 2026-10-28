@@ -15,10 +15,10 @@ sudo apt install -y libmariadb-dev
 pip install mariadb==1.1.14
 ```
 
-執行：
+執行（在 repo 根目錄）：
 
 ```bash
 export DB_USER=crawler DB_PASS='你的密碼' DB_NAME=crawler_course
-python load_jsonl.py ../05-pagination/N0060001.jsonl   # 第一次：新增 61
-python load_jsonl.py ../05-pagination/N0060001.jsonl   # 第二次：未變 61
+python 16-mariadb/load_jsonl.py output/N0060001.jsonl   # 第一次：新增 61
+python 16-mariadb/load_jsonl.py output/N0060001.jsonl   # 第二次：未變 61
 ```

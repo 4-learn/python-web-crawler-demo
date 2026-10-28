@@ -1,7 +1,7 @@
 """11｜Trace Viewer：把每一步的截圖、DOM、網路請求都錄下來。
 
-執行：python trace_demo.py
-查看：playwright show-trace trace.zip   （或上傳到 https://trace.playwright.dev ，檔案只在本機瀏覽器處理）
+執行：python 11-trace-selenium/trace_demo.py
+查看：playwright show-trace output/trace.zip   （或上傳到 https://trace.playwright.dev ，檔案只在本機瀏覽器處理）
 """
 import os
 
@@ -20,7 +20,8 @@ with sync_playwright() as p:
         page.locator("tr.row").first.wait_for(timeout=3000)
     except Exception as e:
         print("失敗了：", type(e).__name__)
-        print("打開 trace.zip 看失敗當下的畫面與 DOM")
+        print("打開 output/trace.zip 看失敗當下的畫面與 DOM")
     finally:
-        context.tracing.stop(path="trace.zip")
+        os.makedirs("output", exist_ok=True)
+        context.tracing.stop(path="output/trace.zip")
         browser.close()

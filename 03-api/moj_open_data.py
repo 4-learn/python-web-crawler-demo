@@ -3,7 +3,7 @@
 law.moj.gov.tw 的 robots.txt 是 Disallow: /，不能爬網頁；但官方提供整包 JSON。
 這支程式約下載 6 MB，請不要在課堂上全班同時執行，老師示範一次即可。
 
-執行：python moj_open_data.py
+執行：python 03-api/moj_open_data.py
 """
 import io
 import json

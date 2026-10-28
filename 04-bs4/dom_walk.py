@@ -1,6 +1,6 @@
 """04｜HTML 是一棵樹：parent、children、next_sibling。
 
-執行：python dom_walk.py
+執行：python 04-bs4/dom_walk.py
 """
 from bs4 import BeautifulSoup
 

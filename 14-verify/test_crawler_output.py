@@ -1,7 +1,7 @@
 """14｜驗證爬蟲輸出：不靠「能跑就好」。
 
 --jsonl 參數定義在 conftest.py。執行：
-    pytest -q test_crawler_output.py --jsonl ../05-pagination/N0060001.jsonl
+    pytest -q 14-verify --jsonl output/N0060001.jsonl
 """
 import json
 import os

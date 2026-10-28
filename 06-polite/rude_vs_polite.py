@@ -1,7 +1,7 @@
 """06｜教室示範：沒禮貌 vs 有禮貌。請對「教室版」server.py 執行，不要對 GitHub Pages 狂打。
 
 老師：python server.py --host 0.0.0.0
-學員：PLAYGROUND=http://老師IP:8000/ python rude_vs_polite.py
+學員：PLAYGROUND=http://老師IP:8000/ python 06-polite/rude_vs_polite.py
 """
 import os
 import sys

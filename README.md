@@ -12,11 +12,26 @@
 Ubuntu LTS（22.04／24.04）、Python 3.10 以上。
 
 ```bash
+git clone https://github.com/4-learn/python-web-crawler-demo.git
+cd python-web-crawler-demo
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 playwright install --with-deps chromium   # 第 07 節起需要
 ```
+
+## 怎麼執行
+
+**所有指令都在 repo 根目錄執行**（`cd python-web-crawler-demo` 之後，不要再 `cd` 進子資料夾）：
+
+```bash
+cd ~/python-web-crawler-demo           # 換成你 clone 的位置
+source .venv/bin/activate              # 每開一個新終端機都要先啟用
+python 01-legal/robots_check.py        # 第 01 節
+python 05-pagination/crawl_law.py N0060001
+```
+
+程式產生的檔案（JSONL、截圖、`trace.zip`、`state.json`、CSV）一律寫到 `output/`，已在 `.gitignore` 排除。
 
 所有程式預設連線 GitHub Pages 練習站。上課時老師若開教室版伺服器，改用：
 

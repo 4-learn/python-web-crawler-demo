@@ -2,7 +2,7 @@
 
 連線設定讀環境變數（不要把密碼寫進程式）：
     export DB_HOST=127.0.0.1 DB_USER=crawler DB_PASS=... DB_NAME=crawler_course
-執行：python load_jsonl.py ../05-pagination/N0060001.jsonl
+執行：python 16-mariadb/load_jsonl.py output/N0060001.jsonl
 連續執行兩次：第二次應顯示「新增 0、更新 0、未變 N」。
 """
 import datetime as dt

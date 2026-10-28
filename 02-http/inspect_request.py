@@ -1,6 +1,6 @@
 """02｜看懂一次 HTTP 請求：status code、header、內容。
 
-執行：python inspect_request.py
+執行：python 02-http/inspect_request.py
 """
 import os
 
