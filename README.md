@@ -45,7 +45,7 @@ export PLAYGROUND=http://老師的IP:8000/
 |---|---|---|
 | `01-legal/` | 01 | 用 `urllib.robotparser` 判斷能不能爬 |
 | `02-http/` | 02 | status code、header、ETag／304 |
-| `03-api/` | 03 | 用 requests 走完 JSON 分頁；全國法規資料庫官方開放資料 |
+| `03-api/` | 03 | Response 的 content／text／json；用 requests 走完 JSON 分頁；全國法規資料庫官方開放資料 |
 | `04-bs4/` | 04 | CSS selector、DOM 走訪 |
 | `05-pagination/` | 05 | 跟著「下一頁」爬完一部法規、JSON-LD、輸出 JSONL |
 | `06-polite/` | 06 | `PoliteSession`：robots.txt、固定間隔、429 重試 |
