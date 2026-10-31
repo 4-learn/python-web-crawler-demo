@@ -32,6 +32,10 @@ print("--- select 回傳很多個 Tag ---")
 rows = soup.select("tr.law")
 print(type(rows), len(rows), type(rows[0]))
 
+print("--- 從 soup 找 vs 從 Tag 找 ---")
+print('soup.select("td.count") →', len(soup.select("td.count")), "個：", [t.get_text() for t in soup.select("td.count")])
+print('row.select("td.count")  →', len(row.select("td.count")), "個：", [t.get_text() for t in row.select("td.count")])
+
 print("--- 找不到時 ---")
 print(soup.select_one("table.no-such-class"), soup.select("table.no-such-class"))
 
