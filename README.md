@@ -48,7 +48,7 @@ export PLAYGROUND=http://老師的IP:8000/
 | `03-api/` | 03 | Response 的 content／text／json；用 requests 走完 JSON 分頁；全國法規資料庫官方開放資料 |
 | `04-bs4/` | 04 | soup 與 Tag、CSS selector、DOM 走訪、找不到元素時 |
 | `05-pagination/` | 05 | 這節的 Python 語法、跟著「下一頁」爬完一部法規、輸出 JSONL、JSON-LD |
-| `06-polite/` | 06 | `PoliteSession`：robots.txt、固定間隔、429 重試 |
+| `06-polite/` | 06 | `load_robots()`／`polite_get()`：robots.txt、固定間隔、429 重試；robotparser 的陷阱 |
 | `07-playwright/` | 07 | requests 看不到動態內容；第一支 Playwright |
 | `08-locator/` | 08 | locator、`expect`、codegen |
 | `09-intercept/` | 09 | 攔截網路回應取得 JSON |
