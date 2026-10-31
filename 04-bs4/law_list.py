@@ -30,6 +30,7 @@ for row in soup.select("table.law-list tr.law"):
         urljoin(URL, link["href"]),  # 相對網址 → 絕對網址
     )
 
-# 3. find / find_all 是同一件事的另一種寫法
+# 3. 舊寫法對照：find 等於 select_one（只找第一個）；find_all 等於 select（找全部）
+#    soup.find("tr", class_="law") 和 soup.select_one("tr.law") 找到的是同一列
 first = soup.find("tr", class_="law")
 print("find 找到的第一列：", first.find("a").get_text())
