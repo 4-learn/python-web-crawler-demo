@@ -54,7 +54,7 @@ export PLAYGROUND=http://老師的IP:8000/
 | `09-intercept/` | 09 | 方法一 `page.on`（回呼）、方法二 `expect_response`（lambda）攔截 API 的 JSON |
 | `10-scroll-login/` | 10 | 無限捲動（用 `expect` 等下一條，不寫 JavaScript）；登入並保存／重用 `storage_state` |
 | `11-trace-selenium/` | 11 | Trace Viewer 找錯；Selenium 4 與 Playwright 對照；前輩留下的 Selenium 爬蟲（只讀） |
-| `13-opencode/` | 13 | 寫給 OpenCode 的規格範例 |
+| `13-opencode/` | 13 | 寫給 OpenCode 的規格範例；安裝與模型設定見 `docs/opencode-setup.md` |
 | `14-verify/` | 14 | 用 pytest 驗證爬蟲輸出 |
 | `15-change/` | 15 | v1／v2 變動偵測、ETag 條件式請求、筆數歸零報警 |
 | `16-mariadb/` | 16 | JSONL 寫入 MariaDB（參數化查詢＋upsert）；匯出 CSV／Markdown |
