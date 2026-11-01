@@ -7,13 +7,14 @@ curl -fsSL https://opencode.ai/install | bash
 opencode --version
 ```
 
-模型與金鑰依老師上課公布的設定；不要把 API key 寫進程式或 commit。
+本課同時掛 OpenCode 免費模型（big-pickle）與 NVIDIA build，安裝、接金鑰、換模型的完整步驟見 [`docs/opencode-setup.md`](../docs/opencode-setup.md)。不要把 API key 寫進程式或 commit。
 
 ## 使用流程
 
 ```bash
-mkdir osh-crawler && cd osh-crawler
-cp ../SPEC.md .
+cd ~
+mkdir lay-off-crawler && cd lay-off-crawler
+cp ~/python-web-crawler-demo/13-opencode/SPEC.md .   # 換成你 clone demo repo 的位置
 opencode
 ```
 

@@ -277,7 +277,7 @@ AI 先讀了 `crawler.py` 和 `SPEC.md`，只改了第 16 行（紅色 `-` 是�
 檔名預設是 `session-….md`，直接按 `Enter`，就會在目前的資料夾存成一個 Markdown 檔，裡面有你說的每一句話、AI 的回答、讀了哪些檔案、執行了哪些指令。**交之前打開檢查一遍，確認裡面沒有金鑰。**
 
 :::info
-13 講義寫的 `/share` 是產生公開連結，這個版本的 OpenCode（1.19.5）輸入 `/share` 會顯示 `No matching items`，表示沒有這個指令。本課改用 `/export` 匯出檔案繳交。
+網路上的教學可能會寫 `/share`（產生公開連結）。這個版本的 OpenCode（1.19.5）輸入 `/share` 會顯示 `No matching items`，表示沒有這個指令，本課一律用 `/export` 匯出檔案繳交。
 :::
 
 ---
