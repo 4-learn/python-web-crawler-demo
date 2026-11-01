@@ -1,6 +1,6 @@
-"""09｜攔截網路回應：讓瀏覽器去載入，我們直接拿它背後的 JSON。
+"""09｜方法二：expect_response 等一支特定的 API，直接拿 JSON。
 
-執行：python 09-intercept/intercept.py
+執行：python 09-intercept/intercept_expect.py
 """
 import os
 
@@ -12,19 +12,17 @@ with sync_playwright() as p:
     browser = p.chromium.launch()
     page = browser.new_page()
 
-    # 方法一：監聽所有回應，看看頁面呼叫了哪些 API
-    seen = []
-    page.on("response", lambda resp: seen.append(resp.url) if "/api/" in resp.url else None)
-
-    # 方法二：等待「特定」回應，直接拿 JSON
+    print("--- 打開頁面時，等勞動基準法第 1 頁 ---")
     with page.expect_response(lambda r: "/api/laws/N0030001/page-1.json" in r.url) as info:
         page.goto(BASE + "v1/dynamic/")
     data = info.value.json()
     print("攔到：", info.value.url)
     print(data["name"], "第", data["page"], "頁，共", data["total_pages"], "頁")
 
-    page.locator("article.article").first.wait_for()
-    print("頁面呼叫過的 API：")
-    for url in seen:
-        print("  ", url.replace(BASE, ""))
+    print("--- 切換法規時，等大量解僱勞工保護法第 1 頁 ---")
+    with page.expect_response(lambda r: "/api/laws/N0020012/page-1.json" in r.url) as info:
+        page.get_by_label("選擇法規").select_option(label="大量解僱勞工保護法")
+    data = info.value.json()
+    print(list(data.keys()))
+    print(data["articles"][0])
     browser.close()
