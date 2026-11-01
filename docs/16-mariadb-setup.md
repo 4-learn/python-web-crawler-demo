@@ -43,7 +43,7 @@ systemctl is-active mariadb
 mariadb --version
 ```
 
-![確認環境](img/mariadb/m01-check.png)
+![確認環境](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m01-check.png)
 
 `systemctl is-active mariadb` 要回 `active`。如果是 `inactive`，用 `sudo systemctl start mariadb` 啟動；如果找不到 `mariadb` 指令，代表還沒安裝，回去看 MariaDB 課的安裝講義。
 
@@ -60,7 +60,7 @@ SHOW DATABASES;
 SELECT user, host FROM mysql.user;
 ```
 
-![sudo mariadb：用管理員身分登入](img/mariadb/m02-admin.png)
+![sudo mariadb：用管理員身分登入](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m02-admin.png)
 
 這時還沒有 `crawler_course` 資料庫，也沒有 `crawler` 帳號。
 
@@ -80,7 +80,7 @@ SHOW GRANTS FOR 'crawler'@'localhost';
 exit
 ```
 
-![建立資料庫與爬蟲帳號](img/mariadb/m03-create.png)
+![建立資料庫與爬蟲帳號](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m03-create.png)
 
 | 指令 | 做什麼 |
 |---|---|
@@ -105,7 +105,7 @@ SHOW TABLES;
 exit
 ```
 
-![用 crawler 帳號登入測試](img/mariadb/m04-login.png)
+![用 crawler 帳號登入測試](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m04-login.png)
 
 `CURRENT_USER()` 是 `crawler@localhost`、`DATABASE()` 是 `crawler_course`，就是對的。`SHOW TABLES` 是 `Empty set`：資料表還沒建，第 9 步程式會自動建。
 
@@ -123,7 +123,7 @@ dpkg -l libmariadb-dev gcc python3-dev | tail -3
 mariadb_config --cc_version
 ```
 
-![確認編譯需要的套件](img/mariadb/m05-apt.png)
+![確認編譯需要的套件](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m05-apt.png)
 
 三行開頭都是 `ii` 代表都裝好了。`mariadb_config --cc_version` 要 **3.3.1 以上**（這台是 3.4.10）。缺的話補裝：
 
@@ -142,7 +142,7 @@ pip install mariadb==1.1.14
 python -c "import mariadb; print(mariadb.__version__)"
 ```
 
-![安裝 Python Connector（現場編譯）](img/mariadb/m06-pip.png)
+![安裝 Python Connector（現場編譯）](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m06-pip.png)
 
 注意 `Building wheel for mariadb … done`：這就是在現場編譯，要等幾秒到十幾秒。最後印出 `1.1.14` 就是裝好了。
 
@@ -162,7 +162,7 @@ python 05-pagination/crawl_law.py N0060001
 wc -l output/N0060001.jsonl
 ```
 
-![產生要寫入的 JSONL](img/mariadb/m07-crawl.png)
+![產生要寫入的 JSONL](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m07-crawl.png)
 
 61 條、檔案 61 行。
 
@@ -175,7 +175,7 @@ export DB_USER=crawler DB_PASS='crawler-db-2026' DB_NAME=crawler_course
 env | grep ^DB_
 ```
 
-![設定帳密環境變數](img/mariadb/m08-env.png)
+![設定帳密環境變數](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m08-env.png)
 
 :::info
 `export` 只對**這個終端機視窗**有效。開新的終端機，要再 `export` 一次。
@@ -188,7 +188,7 @@ python 16-mariadb/load_jsonl.py output/N0060001.jsonl
 python 16-mariadb/load_jsonl.py output/N0060001.jsonl
 ```
 
-![寫入 MariaDB（執行兩次）](img/mariadb/m09-load.png)
+![寫入 MariaDB（執行兩次）](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m09-load.png)
 
 | 第幾次 | 結果 | 意思 |
 |---|---|---|
@@ -212,7 +212,7 @@ SELECT slug, article_no, LEFT(content, 20), fetched_at FROM law_articles ORDER B
 exit
 ```
 
-![用 SQL 查詢確認](img/mariadb/m10-query.png)
+![用 SQL 查詢確認](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m10-query.png)
 
 - `COUNT(*)` 和 `COUNT(DISTINCT slug)` 都是 61：沒有重複的條文。
 - 第 2 條的內容有換行（「本法用詞，定義如下：」後面換行），所以表格被撐成兩行，這是正常的。
@@ -226,7 +226,7 @@ ls -l output/
 head -5 output/N0060001.md
 ```
 
-![輸出 CSV 與 Markdown](img/mariadb/m11-export.png)
+![輸出 CSV 與 Markdown](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m11-export.png)
 
 `N0060001.csv` 給 Pandas 用，`N0060001.md` 給 LLM 和人讀，每一條都附上法規名稱、條號和出處。
 
@@ -242,7 +242,7 @@ DROP TABLE law_articles;
 SELECT COUNT(*) FROM law_articles;
 ```
 
-![爬蟲帳號刪不掉資料](img/mariadb/m12-nodelete.png)
+![爬蟲帳號刪不掉資料](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m12-nodelete.png)
 
 兩個都被擋下來（`command denied`），資料表還是 61 條。程式寫錯時，最多寫壞資料，不會把整張表刪掉。
 
@@ -253,7 +253,7 @@ export DB_USER=crawler DB_PASS=wrong-password DB_NAME=crawler_course
 python 16-mariadb/load_jsonl.py output/N0060001.jsonl 2>&1 | tail -1
 ```
 
-![密碼打錯時](img/mariadb/m13-wrongpass.png)
+![密碼打錯時](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/mariadb/m13-wrongpass.png)
 
 看到 `Access denied … (using password: YES)` 就是密碼不對。`using password: NO` 則是 `DB_PASS` 根本沒設定（忘了 `export`）。
 

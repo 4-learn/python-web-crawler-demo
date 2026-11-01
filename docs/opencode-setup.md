@@ -23,7 +23,7 @@
 curl -fsSL https://opencode.ai/install | bash
 ```
 
-![安裝 OpenCode](img/opencode/01-install.png)
+![安裝 OpenCode](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/01-install.png)
 
 最後看到 OpenCode 的大字標誌就是裝好了。注意中間這行：
 
@@ -42,7 +42,7 @@ source ~/.bashrc
 opencode --version
 ```
 
-![設定 PATH、確認版本](img/opencode/02-path.png)
+![設定 PATH、確認版本](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/02-path.png)
 
 第一行 `opencode: command not found` 是**還沒設 PATH** 的樣子；寫進 `~/.bashrc`、`source` 之後就找得到了。看到版本號（例如 `1.19.5`）就代表安裝完成。
 
@@ -59,7 +59,7 @@ mkdir ~/oc-test && cd ~/oc-test
 opencode
 ```
 
-![opencode 聊天視窗](img/opencode/tui-01-home.png)
+![opencode 聊天視窗](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-01-home.png)
 
 畫面中間是輸入框，下面那行 `Build · Big Pickle OpenCode` 告訴你：
 
@@ -71,13 +71,13 @@ opencode
 
 第一次開啟還沒接任何金鑰，預設就是免費的 Big Pickle。在輸入框打一句話，按 `Enter` 送出：
 
-![輸入問題](img/opencode/tui-02-typed.png)
+![輸入問題](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-02-typed.png)
 
 正常的話，AI 會在上方回答，下面出現 `▣ Build · Big Pickle · 幾秒`。
 
 **額度用完時長這樣**：跳出 `Free limit reached`，底部顯示 `Free usage exceeded`：
 
-![Big Pickle 額度用完](img/opencode/tui-03-bigpickle-limit.png)
+![Big Pickle 額度用完](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-03-bigpickle-limit.png)
 
 :::warning
 這張截圖就是額度用完的實際畫面：撰寫本篇時，這台電腦所在網路的 Big Pickle 免費額度已經用完。**上課時全班共用同一個對外網路，也可能遇到一樣的情況**。這時按 `Esc` 關掉提示，改用下一步的 NVIDIA build，不需要付費訂閱。
@@ -87,11 +87,11 @@ opencode
 
 1. 打開 <https://build.nvidia.com/>，右上角按 **Login**。
 
-   ![NVIDIA build 首頁](img/opencode/05a-nvidia-home.png)
+   ![NVIDIA build 首頁](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/05a-nvidia-home.png)
 
 2. 輸入 Email 註冊或登入（免費）。
 
-   ![NVIDIA build 登入頁](img/opencode/05b-nvidia-login.png)
+   ![NVIDIA build 登入頁](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/05b-nvidia-login.png)
 
 3. 登入後到 **Settings → API Keys**（<https://build.nvidia.com/settings/api-keys>），按 **Generate API Key**，複製產生的金鑰。金鑰以 `nvapi-` 開頭。
 
@@ -106,25 +106,25 @@ opencode
 
 在 OpenCode 聊天視窗的輸入框打 `/connect`，按 `Enter`，會列出可以接的提供者：
 
-![/connect](img/opencode/tui-04-connect.png)
+![/connect](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-04-connect.png)
 
 直接打字搜尋 `nvidia`，按 `Enter` 選它：
 
-![/connect 搜尋 nvidia](img/opencode/tui-05-connect-nvidia.png)
+![/connect 搜尋 nvidia](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-05-connect-nvidia.png)
 
 出現 `API key` 輸入框：
 
-![貼上 API key](img/opencode/tui-06-apikey.png)
+![貼上 API key](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-06-apikey.png)
 
 貼上第 4 步複製的金鑰（`Ctrl+Shift+V` 或滑鼠右鍵貼上），按 `Enter`：
 
-![貼上 API key（截圖已遮蔽）](img/opencode/tui-07-apikey-pasted.png)
+![貼上 API key（截圖已遮蔽）](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-07-apikey-pasted.png)
 
 （截圖中的金鑰已經遮蔽；你的畫面會顯示完整的金鑰。）
 
 接上之後，OpenCode 會直接列出 NVIDIA 上可以用的模型，請你選一個：
 
-![接上 NVIDIA 後選模型](img/opencode/tui-08-connect-done.png)
+![接上 NVIDIA 後選模型](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-08-connect-done.png)
 
 先按 `Esc` 關掉，下一步再教怎麼選。金鑰存在 `~/.local/share/opencode/auth.json`，之後打開 OpenCode 不用再輸入。
 
@@ -134,7 +134,7 @@ opencode
 
 直接打字可以搜尋。例如打 `deepseek v4.1`，會出現兩個同名的模型，**右邊標示來源**：
 
-![/models 搜尋](img/opencode/tui-09-models-search.png)
+![/models 搜尋](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-09-models-search.png)
 
 | 右邊顯示 | 來源 | 額度 |
 |---|---|---|
@@ -143,11 +143,11 @@ opencode
 
 用 `↓` 移到 **Nvidia** 那一行，按 `Enter`。有些模型會再問 **variant**（思考的深淺），選 `Default` 按 `Enter` 就好：
 
-![選 variant](img/opencode/tui-10-variant.png)
+![選 variant](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-10-variant.png)
 
 輸入框下面變成 `Build · DeepSeek V4.1 Flash Nvidia`，就是換好了。問一句話試試：
 
-![NVIDIA 模型回答](img/opencode/tui-11-nvidia-answer.png)
+![NVIDIA 模型回答](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-11-nvidia-answer.png)
 
 回答下面的 `▣ Build · DeepSeek V4.1 Flash · 18.5s` 代表這次是用 NVIDIA 的模型回答，花了 18.5 秒。
 
@@ -170,7 +170,7 @@ cat > ~/.config/opencode/opencode.json <<'JSON'
 JSON
 ```
 
-![設定預設模型](img/opencode/10-default-model.png)
+![設定預設模型](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/10-default-model.png)
 
 | 欄位 | 用途 |
 |---|---|
@@ -193,7 +193,7 @@ cp ~/python-web-crawler-demo/13-opencode/SPEC.md .
 
 （`~/python-web-crawler-demo` 換成你 clone demo repo 的位置。）
 
-![準備資料夾與規格](img/opencode/11-prepare.png)
+![準備資料夾與規格](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/11-prepare.png)
 
 ### 打開 OpenCode，貼上請求
 
@@ -203,13 +203,13 @@ cp ~/python-web-crawler-demo/13-opencode/SPEC.md .
 請閱讀 SPEC.md，照規格寫 crawler.py，完成後執行一次並把輸出筆數告訴我。不要修改 SPEC.md。
 ```
 
-![貼上請求](img/opencode/tui-12-course-typed.png)
+![貼上請求](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-12-course-typed.png)
 
 ### 看 AI 工作
 
 AI 會一邊思考、一邊讀檔案、上網查資料、寫程式、執行指令。工作中底部會顯示 `esc interrupt`，想中斷就按 `Esc`：
 
-![AI 工作中](img/opencode/tui-13-course-working.png)
+![AI 工作中](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-13-course-working.png)
 
 這張截圖裡，AI 正在讀 `robots.txt`、用 `curl` 看 API 的第 2 頁（`"total": 21`、`"next": null`）。畫面上常見的標記：
 
@@ -223,7 +223,7 @@ AI 會一邊思考、一邊讀檔案、上網查資料、寫程式、執行指�
 
 完成時，最下面會出現總結和 `▣ Build · 模型 · 花費時間`：
 
-![完成：21 條](img/opencode/tui-14-course-done.png)
+![完成：21 條](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-14-course-done.png)
 
 AI 寫好 `crawler.py`、自己執行，得到 **21 條**，第 1 條到第 21 條，`wc -l` 也是 21 行。這次花了 1 分 46 秒。
 
@@ -258,9 +258,9 @@ AI 每次寫出來的程式都不一樣。另一次實測時，AI 用了 `parser
 crawler.py 第 16 行 USER_AGENT 是 course-crawler/1.0 (opencode)，違反 SPEC.md「設定 User-Agent course-crawler/1.0 (你的暱稱)」。請改成 (student)，只改這一行，改完重新執行一次。
 ```
 
-![要求修正](img/opencode/tui-15-fix-typed.png)
+![要求修正](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-15-fix-typed.png)
 
-![修正完成](img/opencode/tui-16-fix-done.png)
+![修正完成](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-16-fix-done.png)
 
 AI 先讀了 `crawler.py` 和 `SPEC.md`，只改了第 16 行（紅色 `-` 是刪掉的、綠色 `+` 是新的），重新執行後一樣是 21 條。
 
@@ -272,7 +272,7 @@ AI 先讀了 `crawler.py` 和 `SPEC.md`，只改了第 16 行（紅色 `-` 是�
 
 第 13 節的作業要交 OpenCode 的對話紀錄。輸入 `/export`，按 `Enter`：
 
-![/export 匯出對話](img/opencode/tui-17-export.png)
+![/export 匯出對話](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/tui-17-export.png)
 
 檔名預設是 `session-….md`，直接按 `Enter`，就會在目前的資料夾存成一個 Markdown 檔，裡面有你說的每一句話、AI 的回答、讀了哪些檔案、執行了哪些指令。**交之前打開檢查一遍，確認裡面沒有金鑰。**
 
@@ -315,7 +315,7 @@ opencode run -m nvidia/deepseek-ai/deepseek-v4.1-flash "只回答一個字：好
 opencode run -m nvidia/z-ai/glm-5.3-flash "只回答一個字：好"
 ```
 
-![用 -m 換模型](img/opencode/09-switch.png)
+![用 -m 換模型](https://raw.githubusercontent.com/4-learn/python-web-crawler-demo/main/docs/img/opencode/09-switch.png)
 
 | 用法 | 說明 |
 |---|---|
