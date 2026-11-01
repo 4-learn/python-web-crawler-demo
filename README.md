@@ -51,7 +51,7 @@ export PLAYGROUND=http://老師的IP:8000/
 | `06-polite/` | 06 | 第一步 robots.txt、第二步間隔與重試，合起來成 `polite_get()`；robotparser 的陷阱 |
 | `07-playwright/` | 07 | requests 看不到動態內容；第一支 Playwright；content() 與截圖 |
 | `08-locator/` | 08 | locator、`expect`、`get_by_role`、`show_law()` 函式、`expect` 逾時、codegen |
-| `09-intercept/` | 09 | 攔截網路回應取得 JSON |
+| `09-intercept/` | 09 | 方法一 `page.on`（回呼）、方法二 `expect_response`（lambda）攔截 API 的 JSON |
 | `10-scroll-login/` | 10 | 無限捲動；登入與 `storage_state` |
 | `11-trace-selenium/` | 11 | Trace Viewer；Selenium 4 與 Playwright 對照 |
 | `13-opencode/` | 13 | 寫給 OpenCode 的規格範例 |
