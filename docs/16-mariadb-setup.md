@@ -20,14 +20,14 @@
 
 ```mermaid
 flowchart TD
-    A["1. 確認環境<br/>MariaDB 有在跑"] --> B["2–3. sudo mariadb<br/>建資料庫、建 crawler 帳號"]
-    B --> C["4. 用 crawler 登入測試"]
-    C --> D["5–6. 裝 Python Connector"]
-    D --> E["7. 爬職業安全衛生法<br/>產生 JSONL"]
-    E --> F["8. 設定帳密環境變數"]
-    F --> G["9. load_jsonl.py<br/>寫入兩次"]
-    G --> H["10. SQL 查詢確認"]
-    H --> I["11. 輸出 CSV、Markdown"]
+    A["第 1 步：確認環境<br/>MariaDB 有在跑"] --> B["第 2–3 步：sudo mariadb<br/>建資料庫、建 crawler 帳號"]
+    B --> C["第 4 步：用 crawler 登入測試"]
+    C --> D["第 5–6 步：裝 Python Connector"]
+    D --> E["第 7 步：爬職業安全衛生法<br/>產生 JSONL"]
+    E --> F["第 8 步：設定帳密環境變數"]
+    F --> G["第 9 步：load_jsonl.py<br/>寫入兩次"]
+    G --> H["第 10 步：SQL 查詢確認"]
+    H --> I["第 11 步：輸出 CSV、Markdown"]
 ```
 
 ---
