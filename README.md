@@ -52,7 +52,7 @@ export PLAYGROUND=http://老師的IP:8000/
 | `07-playwright/` | 07 | requests 看不到動態內容；第一支 Playwright；content() 與截圖 |
 | `08-locator/` | 08 | locator、`expect`、`get_by_role`、`show_law()` 函式、`expect` 逾時、codegen |
 | `09-intercept/` | 09 | 方法一 `page.on`（回呼）、方法二 `expect_response`（lambda）攔截 API 的 JSON |
-| `10-scroll-login/` | 10 | 無限捲動；登入與 `storage_state` |
+| `10-scroll-login/` | 10 | 無限捲動（用 `expect` 等下一條，不寫 JavaScript）；登入並保存／重用 `storage_state` |
 | `11-trace-selenium/` | 11 | Trace Viewer；Selenium 4 與 Playwright 對照 |
 | `13-opencode/` | 13 | 寫給 OpenCode 的規格範例 |
 | `14-verify/` | 14 | 用 pytest 驗證爬蟲輸出 |
