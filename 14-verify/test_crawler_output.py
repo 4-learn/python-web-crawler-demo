@@ -6,11 +6,14 @@
 import json
 import os
 import random
+import time
+from urllib.parse import urljoin
 
 import pytest
 import requests
 
 BASE = os.environ.get("PLAYGROUND", "https://4-learn.github.io/crawler-playground/")
+HEADERS = {"User-Agent": "course-crawler/1.0 (test)"}   # 測試也要有禮貌：設 UA、每次間隔 1 秒
 
 
 @pytest.fixture(scope="module")
@@ -27,9 +30,10 @@ def api_articles(rows):
     url = BASE + f"v1/api/laws/{pcode}/page-1.json"
     out = []
     while url:
-        data = requests.get(url, timeout=10).json()
+        data = requests.get(url, headers=HEADERS, timeout=10).json()
         out += data["articles"]
-        url = requests.compat.urljoin(url, data["next"]) if data["next"] else None
+        url = urljoin(url, data["next"]) if data["next"] else None
+        time.sleep(1)
     return out
 
 
