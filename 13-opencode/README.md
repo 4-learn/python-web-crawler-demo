@@ -27,6 +27,6 @@ opencode
 ## 交件
 
 - `SPEC.md`（你寫的規格）
-- OpenCode 的對話紀錄（`/share` 或複製貼上）
+- OpenCode 的對話紀錄（聊天視窗輸入 `/export` 匯出的 `session-….md`）
 - 產生的程式與輸出
 - 你自己做的驗證（第 14 節）
