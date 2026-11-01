@@ -5,13 +5,13 @@
 ```sql
 CREATE DATABASE IF NOT EXISTS crawler_course CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE USER IF NOT EXISTS 'crawler'@'localhost' IDENTIFIED BY '請自訂密碼';
-GRANT SELECT, INSERT, UPDATE, CREATE ON crawler_course.* TO 'crawler'@'localhost';
+GRANT SELECT, INSERT, UPDATE, CREATE, ALTER ON crawler_course.* TO 'crawler'@'localhost';
 ```
 
 安裝 Connector：
 
 ```bash
-sudo apt install -y libmariadb-dev
+sudo apt install -y libmariadb-dev gcc python3-dev
 pip install mariadb==1.1.14
 ```
 

@@ -11,7 +11,7 @@ import json
 import os
 import sys
 
-import mariadb  # pip install mariadb==1.1.14（需先 sudo apt install libmariadb-dev）
+import mariadb  # pip install mariadb==1.1.14（需先 sudo apt install libmariadb-dev gcc python3-dev）
 
 UPSERT = """
 INSERT INTO law_articles
@@ -24,10 +24,19 @@ ON DUPLICATE KEY UPDATE
 """
 
 
+def to_utc(value) -> dt.datetime:
+    """JSONL 的 fetched_at 帶時區（ISO 8601）；MariaDB 的 DATETIME 不收時區，統一轉成 UTC 再拿掉時區。"""
+    if isinstance(value, str):
+        value = dt.datetime.fromisoformat(value)
+    if value.tzinfo is not None:
+        value = value.astimezone(dt.timezone.utc).replace(tzinfo=None)
+    return value.replace(microsecond=0)
+
+
 def main(path: str) -> None:
     with open(path, encoding="utf-8") as f:
         rows = [json.loads(line) for line in f if line.strip()]
-    now = dt.datetime.now().replace(microsecond=0)
+    now = dt.datetime.now(dt.timezone.utc)
 
     conn = mariadb.connect(host=os.environ.get("DB_HOST", "127.0.0.1"), port=int(os.environ.get("DB_PORT", 3306)),
                            user=os.environ["DB_USER"], password=os.environ["DB_PASS"],
@@ -51,7 +60,7 @@ def main(path: str) -> None:
                 stats["未變"] += 1
                 continue  # 沒變就不寫，fetched_at 也不動
             cur.execute(UPSERT, (r["pcode"], r["law_name"], r["slug"], r["article_no"], r.get("chapter", ""),
-                                 r["content"], r["source_url"], h, r.get("fetched_at", now)))
+                                 r["content"], r["source_url"], h, to_utc(r.get("fetched_at", now))))
         conn.commit()
         print(stats)
         cur.execute("SELECT COUNT(*) FROM law_articles WHERE pcode = ?", (rows[0]["pcode"],))
