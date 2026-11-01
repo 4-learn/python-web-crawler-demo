@@ -50,7 +50,7 @@ export PLAYGROUND=http://老師的IP:8000/
 | `05-pagination/` | 05 | 這節的 Python 語法、跟著「下一頁」爬完一部法規、輸出 JSONL、JSON-LD |
 | `06-polite/` | 06 | 第一步 robots.txt、第二步間隔與重試，合起來成 `polite_get()`；robotparser 的陷阱 |
 | `07-playwright/` | 07 | requests 看不到動態內容；第一支 Playwright；content() 與截圖 |
-| `08-locator/` | 08 | locator、`expect`、codegen |
+| `08-locator/` | 08 | locator、`expect`、`get_by_role`、`show_law()` 函式、`expect` 逾時、codegen |
 | `09-intercept/` | 09 | 攔截網路回應取得 JSON |
 | `10-scroll-login/` | 10 | 無限捲動；登入與 `storage_state` |
 | `11-trace-selenium/` | 11 | Trace Viewer；Selenium 4 與 Playwright 對照 |
